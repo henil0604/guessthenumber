@@ -17,6 +17,10 @@ body {
   color: #ffffff;
 }
 
+.form {
+  display: none;
+}
+
 .text-input {
   position: relative;
   margin-top: 50px;
@@ -94,4 +98,9 @@ body {
   color: #fff;
   font-size: 15px;
   margin: auto;
+  display: none;
+}
+
+#restart {
+  display: none;
 }

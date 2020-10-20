@@ -13,16 +13,42 @@ game.compare = 0
 game.mingenerate = 10
 game.maxgenerate = 100
 
+var wrapper = document.getElementById("wrapper")
 var form = document.getElementById("form")
 var number = document.getElementById("number")
 var submitnumber = document.getElementById("submitnumber")
 var winstatus = document.getElementById("winstatus")
+var restart = document.getElementById("restart")
+
+var gameTemp = `
+    <div id="winstatus" class="winstatus"></div>
+
+    <form id="form">
+        <div class="text-input">
+            <input type="number" id="number" min="10" max="100" placeholder="Enter Your Guessed Number" required>
+            <label for="input1">Guess Number</label>
+        </div>
+        <br><br>
+        <button type="submit" class="submitnumber">Guess</button>
+    </form>
+`;
 
 game._init = () => {
     game.randomnumber = game.computer.number.generate(game.mingenerate, game.maxgenerate)
-    game.eventListener()
+    setTimeout(() => {
+        game.eventListener()
+    }, 1000);
 }
 
+game.start = () => {
+    // wrapper.innerHTML = gameTemp;
+    form.style.display = "block"
+    winstatus.style.display = "block"
+    start.style.display = "none"
+    restart.style.display = "none"
+
+    game._init()
+}
 
 game.eventListener = () => {
 

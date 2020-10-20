@@ -15,10 +15,10 @@ game.user.compare.less = () => {
 }
 
 game.user.compare.equal = () => {
-    game.user.html.changeStatus("YAY!!! You Guessed The Number. RESTARTING THE GAME....")
+    game.user.html.changeStatus("YAY!!! You Guessed The Number...")
     
     setTimeout(() => {
-        game.restart()
+        game.user.html.addrestart()
     }, 3000);
 }
 
@@ -37,7 +37,18 @@ game.user.html.changeStatus = (str, timer=null) => {
 }
 
 game.user.html.restart = () => {
+    form.style.display = "block"
+    winstatus.style.display = "block"
+    start.style.display = "none"
+    restart.style.display = "none"
     winstatus.innerHTML = ""
+}
+
+game.user.html.addrestart = () => {
+    form.style.display = "none"
+    winstatus.style.display = "none"
+    start.style.display = "none"
+    restart.style.display = "block"
 }
 
 game.user.html.changeInputMinMax = (min, max) => {

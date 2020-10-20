@@ -14,10 +14,12 @@
 
 <body>
 
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper">
+        <button id="start" onclick="game.start()" class="submitnumber">Start</button>
+
         <div id="winstatus" class="winstatus"></div>
 
-        <form id="form">
+        <form class="form" id="form">
             <div class="text-input">
                 <input type="number" id="number" min="10" max="100" placeholder="Enter Your Guessed Number" required>
                 <label for="input1">Guess Number</label>
@@ -26,7 +28,7 @@
             <button type="submit" class="submitnumber">Guess</button>
         </form>
 
-
+        <button id="restart" onclick="game.restart()" class="submitnumber">Restart</button>
     </div>
 
 
@@ -40,7 +42,7 @@
     <script src="js/user.js"></script>
     <script src="js/computer.js"></script>
     <script>
-        game._init()
+        // game._init()
     </script>
 </body>
 
